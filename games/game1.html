@@ -4,12 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game 1</title>
+    <style>
+        /* Reset margin and padding for body and html */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        /* Style for the header */
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            height: 60px; /* Adjust header height as needed */
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+        }
+
+        /* Make the iframe take the remaining height */
+        iframe {
+            width: 100%;
+            height: calc(100vh - 60px); /* Full viewport height minus header height */
+            border: none;
+            display: block;
+            margin-top: 60px; /* Push iframe down to avoid overlap with header */
+        }
+    </style>
 </head>
 <body>
-    <h1>Game 1</h1>
+    <header>
+        <h1>Game 1</h1>
+    </header>
 
     <!-- Embedding the game -->
-    <iframe src="https://protecttheborder.libertyforgestudios.com" width="800" height="600" frameborder="0"></iframe>
-
+    <iframe src="https://protecttheborder.libertyforgestudios.com" 
+            frameborder="0" 
+            allowfullscreen>
+    </iframe>
 </body>
 </html>
