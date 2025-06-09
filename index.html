@@ -6,7 +6,7 @@
     <title>Game Hub</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Optional inline CSS for the search bar */
+        /* Search bar styling */
         #searchBar {
             display: block;
             margin: 20px auto;
@@ -15,6 +15,17 @@
             font-size: 16px;
             border: 1px solid #ccc;
             border-radius: 5px;
+        }
+
+        /* Hover effect for game images */
+        .grid a img {
+            transition: transform 0.3s ease, filter 0.3s ease;
+            cursor: pointer;
+        }
+
+        .grid a img:hover {
+            transform: scale(1.05);
+            filter: brightness(1.2);
         }
     </style>
 </head>
@@ -31,23 +42,3 @@
     <div class="grid">
         <a href="games/protecttheborder.html" data-name="Protect The Border">
             <img src="assets/protecttheborderlogo.png" alt="Protect The Border">
-        </a>
-        <a href="games/fedwars.html" data-name="Fed Wars">
-            <img src="assets/fedwarslogo.png" alt="Fed Wars">
-        </a>
-    </div>
-
-    <!-- Filter Script -->
-    <script>
-        function filterGames() {
-            const input = document.getElementById("searchBar").value.toLowerCase();
-            const games = document.querySelectorAll(".grid a");
-
-            games.forEach(game => {
-                const name = game.getAttribute("data-name").toLowerCase();
-                game.style.display = name.includes(input) ? "inline-block" : "none";
-            });
-        }
-    </script>
-</body>
-</html>
