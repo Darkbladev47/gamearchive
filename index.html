@@ -6,7 +6,7 @@
     <title>Game Hub</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Search bar styling */
+        /* Optional inline CSS for the search bar */
         #searchBar {
             display: block;
             margin: 20px auto;
@@ -42,3 +42,29 @@
     <div class="grid">
         <a href="games/protecttheborder.html" data-name="Protect The Border">
             <img src="assets/protecttheborderlogo.png" alt="Protect The Border">
+        </a>
+        <a href="games/fedwars.html" data-name="Fed Wars">
+            <img src="assets/fedwarslogo.png" alt="Fed Wars">
+        </a>
+    </div>
+
+    <!-- Filter Script -->
+    <script>
+        function filterGames() {
+            const input = document.getElementById("searchBar").value.toLowerCase();
+            const games = document.querySelectorAll(".grid a");
+
+            games.forEach(game => {
+                const name = game.getAttribute("data-name").toLowerCase();
+                game.style.display = name.includes(input) ? "inline-block" : "none";
+            });
+        }
+
+        // ✅ Clear search on page load and show all games
+        window.onload = () => {
+            document.getElementById("searchBar").value = "";
+            filterGames();
+        };
+    </script>
+</body>
+</html>
