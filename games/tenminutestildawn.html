@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protect The Border</title>
+    <style>
+        /* Reset margin and padding for body and html */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        /* Style for the header */
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            height: 60px; /* Adjust header height as needed */
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+        }
+
+        /* Make the iframe take the remaining height */
+        iframe {
+            width: 100%;
+            height: calc(100vh - 60px); /* Full viewport height minus header height */
+            border: none;
+            display: block;
+            margin-top: 60px; /* Push iframe down to avoid overlap with header */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ten Minutes Til Dawn</h1>
+    </header>
+
+    <!-- Embedding the game -->
+    <iframe src="https://108.181.21.229/html/5833734/10MinutesTillDawnWebGL/index.html?v=1732313710&__cpo=aHR0cHM6Ly9odG1sLWNsYXNzaWMuaXRjaC56b25l" 
+            frameborder="0" 
+            allowfullscreen>
+    </iframe>
+</body>
+</html>
